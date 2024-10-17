@@ -19,7 +19,7 @@ export class AddressBookListComponent implements OnInit, OnDestroy{
   
   private _unsubscribed$: Subject<void> = new Subject<void>();
 
-  columns: string[] = ['select', 'name', 'phoneNumber', 'address'];
+  columns: string[] = ['select', 'firstName','lastName', 'phoneNumber', 'address'];
   dataSource!: MatTableDataSource<Person>;
 
   constructor(private addressBookService: AddressBookService, private dialog: MatDialog){}

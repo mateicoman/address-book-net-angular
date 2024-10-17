@@ -11,9 +11,14 @@
         </td>
       </ng-container>
   
-      <ng-container matColumnDef="name">
-        <th *matHeaderCellDef mat-header-cell mat-sort-header class="px-4 py-2"> Name </th>
-        <td mat-cell *matCellDef="let person" class="border-b"> {{ person.firstName }} {{ person.lastName }}</td>
+      <ng-container matColumnDef="firstName">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header class="px-4 py-2"> First Name </th>
+        <td mat-cell *matCellDef="let person" class="border-b"> {{ person.firstName }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="lastName">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header class="px-4 py-2"> Last Name </th>
+        <td mat-cell *matCellDef="let person" class="border-b"> {{ person.lastName }}</td>
       </ng-container>
 
       <ng-container matColumnDef="phoneNumber">
