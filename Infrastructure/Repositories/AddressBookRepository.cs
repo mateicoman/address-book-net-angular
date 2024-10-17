@@ -12,7 +12,7 @@ public class AddressBookRepository: IAddressBookRepository
             Id = Guid.Parse("a58d4224-8b00-4f10-baf1-426ee899afed"), 
             FirstName = "Matei", 
             LastName = "Coman",
-            PhoneNumber = "0759182821",              
+            PhoneNumber = "473212",              
             Address = new() 
             { 
                 Street = "Mosilor",
@@ -30,7 +30,7 @@ public class AddressBookRepository: IAddressBookRepository
             Id = Guid.Parse("fa861fd5-066a-4e62-969c-f2e93ab5c573"), 
             FirstName = "Andra", 
             LastName = "Semciuc",
-                PhoneNumber = "0759182821",             
+            PhoneNumber = "082821",             
             Address = new() 
             { 
                 Street = "Corneliu Coposu",
