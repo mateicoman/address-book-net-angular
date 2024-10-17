@@ -10,5 +10,4 @@ public class AddressDto
     public string Town { get; set; } = null!;
     public string Country { get; set; } = null!;
     public string Postcode { get; set; } = null!;
-    public string PhoneNumber { get; set; } = null!;
 }

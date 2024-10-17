@@ -16,6 +16,15 @@ namespace API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PersonDto))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<PersonDto>> GetPersonAsync(Guid id)
-            => Ok(await addressBookService.GetPersonAsync(id));                         
+            => Ok(await addressBookService.GetPersonAsync(id));
+
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<PersonDto>> GetPersonAsync()
+        {
+            PersonDto result = await addressBookService.CreatePersonAsync();
+            return Created(string.Empty, result);
+        }                                      
     }
 }

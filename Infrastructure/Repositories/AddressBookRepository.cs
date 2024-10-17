@@ -5,13 +5,14 @@ namespace Infrastructure.Repositories;
 
 public class AddressBookRepository: IAddressBookRepository
 {
-    private readonly List<Person> AddressBookData = 
+    private static List<Person> AddressBookData = 
     [
         new()
         { 
             Id = Guid.Parse("a58d4224-8b00-4f10-baf1-426ee899afed"), 
             FirstName = "Matei", 
-            LastName = "Coman", 
+            LastName = "Coman",
+            PhoneNumber = "0759182821",              
             Address = new() 
             { 
                 Street = "Mosilor",
@@ -21,15 +22,15 @@ public class AddressBookRepository: IAddressBookRepository
                 Floor = "2",
                 Postcode = "020988",
                 Town = "Bucharest",
-                Country = "Romania",
-                PhoneNumber = "0759182821"                
+                Country = "Romania"
             }
         },
         new()
         { 
             Id = Guid.Parse("fa861fd5-066a-4e62-969c-f2e93ab5c573"), 
             FirstName = "Andra", 
-            LastName = "Semciuc", 
+            LastName = "Semciuc",
+                PhoneNumber = "0759182821",             
             Address = new() 
             { 
                 Street = "Corneliu Coposu",
@@ -39,8 +40,7 @@ public class AddressBookRepository: IAddressBookRepository
                 Floor = "5",
                 Postcode = "020988",
                 Town = "Bucharest",
-                Country = "Romania",
-                PhoneNumber = "0759182821"                  
+                Country = "Romania",                  
             }
         }
     ];
@@ -53,5 +53,11 @@ public class AddressBookRepository: IAddressBookRepository
     public async Task<Person?> GetPersonAsync(Guid id)
     {
         return AddressBookData.SingleOrDefault(p => p.Id == id);
+    }
+
+    public async Task<Person?> CreatePersonAsync(Person person)
+    {
+        AddressBookData.Add(person);
+        return AddressBookData.SingleOrDefault(p => p.Id == person.Id);
     }
 }

@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AddressBookComponent } from './address-book/address-book.component';
 
 const routes: Routes = [
-  { path: 'home', component: AddressBookComponent, data: { breadcrumb: 'Home' } }
+  { path: '', component: AddressBookComponent, data: { breadcrumb: '' } }
 ];
 
 @NgModule({

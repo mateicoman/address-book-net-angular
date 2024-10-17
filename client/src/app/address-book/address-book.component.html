@@ -7,8 +7,14 @@
   <main class="flex-grow p-4">
     <div class="bg-white rounded-lg shadow-lg overflow-hidden">
       <div class="p-4">
-        <h2 class="text-xl font-semibold mb-4">Contacts</h2>
-            <app-address-book-list></app-address-book-list>
+        <div class="toolbar">
+          <h2 class="text-xl font-semibold mb-4">Contacts</h2>
+          <span class="spacer"></span>
+          <button (click)="addPerson()" mat-icon-button>
+            <mat-icon>person_add</mat-icon>
+          </button>
+        </div>
+        <app-address-book-list></app-address-book-list>
       </div>
     </div>
   </main>

@@ -8,8 +8,8 @@ public class AddressBookProfile : Profile
 {
 	public AddressBookProfile()
 	{
-        CreateMap<Person, PersonDto>();
-        CreateMap<Address, AddressDto>();
+        CreateMap<Person, PersonDto>().ReverseMap();
+        CreateMap<Address, AddressDto>().ReverseMap();
     }
 }
 

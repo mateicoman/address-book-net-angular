@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
@@ -17,5 +17,12 @@ export class AddressBookService {
   findById(id: string) {
     const url = `${environment.apiUrl}address-book/${id}`;
     return this.http.get<Person>(url);
+  }
+
+  create() {
+    const params = new HttpParams();
+
+    const url = `${environment.apiUrl}address-book/`;
+    return this.http.post<Person>(url, null, {params});
   }
 }
