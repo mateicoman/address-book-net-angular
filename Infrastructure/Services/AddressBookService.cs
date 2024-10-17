@@ -13,9 +13,14 @@ public class AddressBookService(IAddressBookRepository addressBookRepository,
 {
     public async Task<IEnumerable<PersonDto>> GetAllAsync()
     {
-        var result = await addressBookRepository.GetAllAsync();
+        logger.LogInformation("Retriving all items");        
+        var result = await addressBookRepository.GetAllAsync() ??
+                    throw new KeyNotFoundException($"No data found");
+                    
+        IEnumerable<PersonDto> list = mapper.Map<IEnumerable<PersonDto>>(result);
 
-        return mapper.Map<IEnumerable<PersonDto>>(result);
+        logger.LogInformation("All items retrived succesfully");  
+        return list;
     }
 
     public async Task<PersonDto> GetPersonAsync(Guid id)

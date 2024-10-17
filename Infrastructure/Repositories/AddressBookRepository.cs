@@ -9,7 +9,7 @@ public class AddressBookRepository: IAddressBookRepository
     [
         new()
         { 
-            Id = Guid.NewGuid(), 
+            Id = Guid.Parse("a58d4224-8b00-4f10-baf1-426ee899afed"), 
             FirstName = "Matei", 
             LastName = "Coman", 
             Address = new() 
@@ -18,12 +18,16 @@ public class AddressBookRepository: IAddressBookRepository
                 StreetNumber = "290",
                 Block = "36",
                 Apartment = "35",
-                Floor = "2"
+                Floor = "2",
+                Postcode = "020988",
+                Town = "Bucharest",
+                Country = "Romania",
+                PhoneNumber = "0759182821"                
             }
         },
         new()
         { 
-            Id = Guid.NewGuid(), 
+            Id = Guid.Parse("fa861fd5-066a-4e62-969c-f2e93ab5c573"), 
             FirstName = "Andra", 
             LastName = "Semciuc", 
             Address = new() 
@@ -32,7 +36,11 @@ public class AddressBookRepository: IAddressBookRepository
                 StreetNumber = "4",
                 Block = "5",
                 Apartment = "25",
-                Floor = "5"
+                Floor = "5",
+                Postcode = "020988",
+                Town = "Bucharest",
+                Country = "Romania",
+                PhoneNumber = "0759182821"                  
             }
         }
     ];
