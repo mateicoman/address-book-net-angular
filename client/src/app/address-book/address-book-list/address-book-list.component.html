@@ -1,29 +1,36 @@
 <div class="p-4">
-    <table mat-table [dataSource]="dataSource" class="min-w-full bg-white rounded-lg shadow-lg overflow-hidden">
-      
+    <table mat-table [dataSource]="dataSource" matSort matSortActive="firstName" matSortDirection="asc" matSortDisableClear class="min-w-full bg-white rounded-lg shadow-lg overflow-hidden">
       <!-- Define Columns -->
     <!-- Checkbox Column -->
     <ng-container matColumnDef="select">
         <th *matHeaderCellDef mat-header-cell></th>
-        <td *matCellDef="let user" mat-cell class="w-8">
-            <button mat-icon-button>
+        <td *matCellDef="let person" mat-cell class="w-8">
+            <button (click)="seePerson(person.id)" mat-icon-button>
                 <mat-icon>remove_red_eye</mat-icon>
               </button>
         </td>
       </ng-container>
   
       <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef class="px-4 py-2"> Name </th>
+        <th *matHeaderCellDef mat-header-cell mat-sort-header class="px-4 py-2"> Name </th>
         <td mat-cell *matCellDef="let person" class="border-b"> {{ person.firstName }} {{ person.lastName }}</td>
       </ng-container>
   
       <ng-container matColumnDef="address">
-        <th mat-header-cell *matHeaderCellDef class="px-4 py-2"> Address </th>
+        <th *matHeaderCellDef mat-header-cell mat-sort-header class="px-4 py-2"> Address </th>
         <td mat-cell *matCellDef="let person" class="border-b"> {{ person.address.street }} {{ person.address.streetNumber }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="phoneNumber">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header class="px-4 py-2"> Phone Number </th>
+        <td mat-cell *matCellDef="let person" class="border-b"> {{ person.address.phoneNumber }}</td>
       </ng-container>
   
       <tr mat-header-row *matHeaderRowDef="columns" class="bg-gray-200"></tr>
       <tr mat-row *matRowDef="let row; columns: columns;"></tr>
     </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"
+              aria-label="Select page">
+</mat-paginator>
   </div>
   

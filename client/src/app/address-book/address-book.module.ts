@@ -7,11 +7,14 @@ import {MatIconModule} from '@angular/material/icon';
 import { AddressBookComponent } from './address-book.component';
 import { AddressBookListComponent } from './address-book-list/address-book-list.component';
 import { AddressBookService } from './address-book.service';
+import { MatDialogModule } from '@angular/material/dialog';
+import { AddressBookDetailsPopupComponent } from './address-book-details-popup/address-book-details-popup.component';
 
 @NgModule({
   declarations: [
     AddressBookComponent,
-    AddressBookListComponent
+    AddressBookListComponent,
+    AddressBookDetailsPopupComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +22,8 @@ import { AddressBookService } from './address-book.service';
     MatSortModule,
     MatPaginatorModule,
     MatIconModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDialogModule
   ],
   providers:[AddressBookService]
 })

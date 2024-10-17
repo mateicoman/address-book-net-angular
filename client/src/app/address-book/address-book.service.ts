@@ -9,8 +9,13 @@ export class AddressBookService {
 
   constructor(private http: HttpClient) {}
 
-  find(): Observable<Person[]> {
+  find() {
     const url = `${environment.apiUrl}address-book`;
     return this.http.get<Person[]>(url);
+  }
+
+  findById(id: string) {
+    const url = `${environment.apiUrl}address-book/${id}`;
+    return this.http.get<Person>(url);
   }
 }

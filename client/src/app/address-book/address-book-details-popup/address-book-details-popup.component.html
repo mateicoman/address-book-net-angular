@@ -1,0 +1,17 @@
+<h2 mat-dialog-title>Person Details</h2>
+<mat-dialog-content>
+  <strong>First Name:</strong> {{ data.firstName }}
+  <strong>Last Name:</strong> {{ data.lastName }}
+  <strong>Address:</strong>
+  <p>Street: {{data.address.street}} {{data.address.streetNumber}}</p>
+  <p>Block: {{data.address.block}}</p>
+  <p>Apartment: {{data.address.apartment}}</p>
+  <p>Floor: {{data.address.floor}}</p>
+  <p>Town: {{data.address.town}}</p>
+  <p>Country: {{data.address.country}}</p>
+  <p>Postcode: {{data.address.postcode}}</p>
+  <p>PhoneNumber: {{data.address.phoneNumber}}</p>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onClose()">Close</button>
+</mat-dialog-actions>
