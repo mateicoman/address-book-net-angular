@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/address-book")]
     public class AddressBookController(IAddressBookService addressBookService) : ControllerBase
     {
         [HttpGet()]
